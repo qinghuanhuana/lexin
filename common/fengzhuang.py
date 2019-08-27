@@ -8,6 +8,7 @@ from app.page import get_yaml
 page_loc = get_yaml.LonginPage()
 min_loc = get_yaml.MinePage()
 zhuce_loc = get_yaml.ZhucePage()
+url = "http://127.0.0.1:4723/wd/hub"
 class Fengzhuang(object):
     def lunachapp(self):
         desired_caps = {
@@ -20,7 +21,7 @@ class Fengzhuang(object):
             'resetKeyboard': True,
             # 'automationName': 'Uiautomator2'
         }
-        self.dr = webdriver.Remote("http://127.0.0.1:4723/wd/hub", desired_caps)
+        self.dr = webdriver.Remote(url, desired_caps)
         time.sleep(3)
         return self.dr
 
