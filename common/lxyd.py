@@ -1,9 +1,8 @@
 # coidng=utf-8
-from app.page import get_yaml
-from app.common.Swipe_swipe import *
-from app.common.fengzhuang import Fengzhuang
-import yaml,os
-
+from lexin.page import get_yaml
+from lexin.common.Swipe_swipe import *
+from lexin.common.fengzhuang import Fengzhuang
+import yaml, os
 page_loc = get_yaml.LonginPage()
 min_loc = get_yaml.MinePage()
 zhuce_loc = get_yaml.ZhucePage()
@@ -141,10 +140,9 @@ class Lxyd(Fengzhuang):
         self.send_keys(self.srfname_loc, username)
         self.click(self.srfconfirm_loc)
 
-    def test_data(self):
+    def test_data(self, path):
         base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-        data_path = os.path.join(base_path, 'data', 'testdata.yaml')
+        data_path = os.path.join(base_path, 'data', path)
         with open(data_path, 'rb') as fp:
             data = yaml.load(fp)
-        # print(data)
         return data

@@ -49,7 +49,7 @@ class Lexin(unittest.TestCase):
             self.fz.login('19000000000', '123456')
             self.fz.tan_chuan()
         try:
-            username = self.fz.test_data()['username']
+            username = self.fz.test_data('testdata.yaml')['username']
             self.fz.update_name(username)
             name_txt = self.fz.get_text(self.apiname_loc)
             self.assertEqual(name_txt, username)

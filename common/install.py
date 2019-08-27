@@ -2,13 +2,14 @@
 import time
 from uiautomator import Device
 from appium import webdriver
-import os
+import os, yaml
 from threading import Thread
+from common.lxyd import Lxyd
 d = Device("")
 print(d.info)
 path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 appPath = os.path.join(path, "apk", "lxyd.apk")
-url = "http://127.0.0.1:4723/wd/hub"
+url = Lxyd.test_data('url.yaml')['url']
 desired_caps={
             'platformName': 'Android',
             'deviceName': 'X2P5T16114009484',

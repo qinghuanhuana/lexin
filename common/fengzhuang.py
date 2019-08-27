@@ -5,10 +5,11 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from app.common.Swipe_swipe import *
 from app.page import get_yaml
+from app.common.lxyd import Lxyd
 page_loc = get_yaml.LonginPage()
 min_loc = get_yaml.MinePage()
 zhuce_loc = get_yaml.ZhucePage()
-url = "http://127.0.0.1:4723/wd/hub"
+url = Lxyd.test_data('url.yaml')['url']
 class Fengzhuang(object):
     def lunachapp(self):
         desired_caps = {
